@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Route::group(['prefix' => 'admin'], function() {
+//    Route::resource('clients', 'Admin\ClientsController');
+//});
+
+// Or we can add the corresponding namespace inside de 'group'
+
+Route::group([
+        'prefix' => 'admin',
+        'namespace' => 'Admin'], function() {
+    Route::resource('clienst', 'ClientsController');
+});
