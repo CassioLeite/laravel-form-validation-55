@@ -22,7 +22,7 @@ class CreateClientsTable extends Migration
             $table->boolean('defaulter'); // inadimplente
             $table->date('date_birth');
             $table->char('sex', 10);
-            $table->enum('marital_status', \App\Client::MARITAL_STATUS);
+            $table->enum('marital_status', array_keys(\App\Client::MARITAL_STATUS));
             $table->string('physical_disability')->nullable();
             $table->timestamps();
         });
