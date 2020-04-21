@@ -25,5 +25,5 @@ Route::get('/', function () {
 Route::group([
         'prefix' => 'admin',
         'namespace' => 'Admin'], function() {
-    Route::resource('clienst', 'ClientsController');
+    Route::resource('clients', 'ClientsController');
 });
