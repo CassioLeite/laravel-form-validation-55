@@ -16,7 +16,7 @@ class AlterToClientTypeClientsTable extends Migration
         Schema::table('clients', function (Blueprint $table) {
             $table->string('document_number')->unique()->change();
             $table->date('date_birth')->nullable()->change();
-            \DB::statement('ALTER TABLE clients CHANGE COLUMN sex sex CHAR NOT NULL');
+            \DB::statement('ALTER TABLE clients CHANGE COLUMN sex sex CHAR NULL');
             $maritalStatus = \App\Client::MARITAL_STATUS;
             $maritalStatusString = array_map(function($value){
                 return "'$value'";
